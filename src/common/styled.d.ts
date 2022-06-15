@@ -8,6 +8,7 @@ interface IColor {
   lightGray: string;
   lightGray2: string;
   gray: string;
+  error: string;
 }
 
 declare module 'styled-components' {
