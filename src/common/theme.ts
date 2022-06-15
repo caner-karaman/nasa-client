@@ -9,8 +9,9 @@ const theme: DefaultTheme = {
     lightGray: '#C4C4C4',
     lightGray2: '#EAEAEA',
     gray: '#515151',
+    darkGray: '#CCCCCC',
     secondary: '#1D7CDB',
-    error: '#FFCCCC'
+    error: '#F72D2D'
   }
 }
 

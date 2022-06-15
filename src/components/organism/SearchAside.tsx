@@ -7,13 +7,16 @@ import { ILabelValue } from '../atom/dropdown/Dropdown';
 import request from '../../common/service';
 
 const Aside = styled.aside`
-  background-color: #0a1544;
-  height: 100vh;
   width: 260px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.3);
+  padding-bottom: 20px;
+  background-color: ${({theme}) => theme.color.white};
+  min-height: 100vh;
 `;
 
 const FormTitle = styled.h2`
-  color: ${({theme}) => theme.color.white};
+  color: ${({theme}) => theme.color.black};
   font-size: 2em;
   margin-bottom: 0.75rem;
 `;
@@ -21,7 +24,7 @@ const FormTitle = styled.h2`
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 0 0 2rem;
 `;
 
 const FormWrapper = styled.form`

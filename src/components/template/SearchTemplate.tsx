@@ -1,16 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Container } from '../atom';
 import SearchAside from "../organism/SearchAside";
 
-const Wrapper = styled.div`
+const Wrapper = styled(Container)`
   display: flex;
+`;
+
+const Main = styled.main`
+  width: 100%;
 `
 
 const SearchTemplate = () => {
   return (
     <Wrapper>
       <SearchAside></SearchAside>
-      <main></main>
+      <Main></Main>
     </Wrapper>  
   )
 };

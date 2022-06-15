@@ -4,6 +4,7 @@ interface IColor {
   primary: string;
   secondary: string;
   white: string;
+  darkGray: string;
   black: string;
   lightGray: string;
   lightGray2: string;
