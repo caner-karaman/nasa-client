@@ -4,6 +4,7 @@ import { Input, Dropdown } from "../atom";
 import styled from 'styled-components';
 import { SubmitHandler, useForm, Controller } from 'react-hook-form';
 import { ILabelValue } from '../atom/dropdown/Dropdown';
+import request from '../../common/service';
 
 const Aside = styled.aside`
   background-color: #0a1544;
@@ -53,9 +54,27 @@ type Inputs = {
   endDate: ILabelValue,
 };
 
+interface IParams {
+  media_type: 'image';
+  q: string;
+  year_start?: string;
+  year_end?: string;
+}
+
 const SearchAside = () => {
   const { control, handleSubmit, formState: {errors} } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = ({name, startDate, endDate}) => {
+    const params: IParams = {
+      media_type: 'image',
+      q: name,
+    }
+    if(startDate?.value) params['year_start'] = startDate.value;
+    if(endDate?.value) params['year_end'] = endDate.value;
+    request.get('/search', {
+      
+      params: params
+    });
+  }
 
   return(
     <Aside>
